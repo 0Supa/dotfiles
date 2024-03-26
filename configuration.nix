@@ -60,11 +60,9 @@
       auto-optimise-store = true;
       warn-dirty = false;
 
-      settings = {
-        substituters = [
-          "https://cache.nixos.org"
-        ];
-      };
+      substituters = [
+        "https://cache.nixos.org"
+      ];
     };
   };
 
