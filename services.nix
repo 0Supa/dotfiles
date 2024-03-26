@@ -1,3 +1,5 @@
+{ lib, pkgs, ... }:
+
 {
   systemd.services = {
     func_supa =
@@ -15,6 +17,7 @@
           RestartSec = 5;
           WorkingDirectory = dir;
           ExecStart = "${dir}/func_supa";
+          Environment = "PATH=${lib.makeBinPath [ pkgs.yt-dlp pkgs.zbar ]}";
         };
         wantedBy = [ "multi-user.target" ];
       };
