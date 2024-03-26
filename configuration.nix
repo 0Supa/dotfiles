@@ -195,6 +195,9 @@
           arandr
           electrum
           chromium
+          nitrogen
+          feh
+          prismlauncher
         ];
       };
     };
