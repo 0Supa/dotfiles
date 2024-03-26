@@ -56,8 +56,15 @@
     };
 
     settings = {
+      experimental-features = [ "nix-command" "flakes" ];
       auto-optimise-store = true;
       warn-dirty = false;
+
+      settings = {
+        substituters = [
+          "https://cache.nixos.org"
+        ];
+      };
     };
   };
 
@@ -251,8 +258,6 @@
       lockerCommand = "${pkgs.i3lock}/bin/i3lock --color 000000 --nofork";
     };
   };
-
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   system.stateVersion = "23.11"; # do not change
 }
