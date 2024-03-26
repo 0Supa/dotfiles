@@ -5,6 +5,7 @@
     func_supa =
       let
         dir = "/home/supa/git/func_supa";
+        dependencies = [ pkgs.yt-dlp pkgs.zbar ];
       in
       {
         enable = true;
@@ -17,7 +18,7 @@
           RestartSec = 5;
           WorkingDirectory = dir;
           ExecStart = "${dir}/func_supa";
-          Environment = "PATH=${lib.makeBinPath [ pkgs.yt-dlp pkgs.zbar ]}";
+          Environment = "PATH=${lib.makeBinPath dependencies}";
         };
         wantedBy = [ "multi-user.target" ];
       };
