@@ -11,8 +11,6 @@
       # pkgs.hello
     ];
 
-    file = { };
-
     sessionVariables = {
       EDITOR = "vim";
     };
