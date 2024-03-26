@@ -12,6 +12,8 @@
     ];
 
     sessionVariables = {
+      BROWSER = "${lib.getExe pkgs.firefox}";
+      DISPLAY = ":0";
       EDITOR = "vim";
     };
 
@@ -29,6 +31,9 @@
       ".config/rofi/config.rasi".source = ./config/rofi/config.rasi;
     };
   };
+
+  # disable home-manager news notification
+  news.display = "silent";
 
   programs = {
     # Let Home Manager install and manage itself.
