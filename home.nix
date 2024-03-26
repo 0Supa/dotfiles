@@ -180,6 +180,10 @@
           "${modifier}+Tab" = "exec --no-startup-id rofi -show window";
           "Control+${modifier}+t" = "exec --no-startup-id ${terminal}";
           "Mod4+d" = "workspace number 5; workspace number 2";
+
+          # move focused workspace between monitors
+          "${modifier}+Shift+greater" = "move workspace to output right";
+          "${modifier}+Shift+less" = "move workspace to output left";
         };
 
       focus = {
