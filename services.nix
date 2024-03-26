@@ -7,11 +7,12 @@
       {
         enable = true;
         unitConfig = {
+          After = "network.target";
+        };
+        serviceConfig = {
           Type = "simple";
           Restart = "always";
           RestartSec = 5;
-        };
-        serviceConfig = {
           WorkingDirectory = dir;
           ExecStart = "${dir}/func_supa";
         };
