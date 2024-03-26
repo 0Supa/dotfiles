@@ -244,6 +244,8 @@
     zsh.enable = true;
     dconf.enable = true;
 
+    steam.enable = true;
+
     xss-lock = {
       enable = true;
       lockerCommand = "${pkgs.i3lock}/bin/i3lock --color 000000 --nofork";
