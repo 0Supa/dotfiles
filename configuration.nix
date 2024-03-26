@@ -93,6 +93,10 @@
 
       displayManager = {
         defaultSession = "none+i3";
+        autoLogin.enable = true;
+        autoLogin.user = "supa";
+        lightdm.autoLogin.timeout = 0;
+        lightdm.greeter.enable = false;
       };
 
       windowManager.i3 = {
