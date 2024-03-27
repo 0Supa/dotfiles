@@ -352,6 +352,12 @@
     };
   };
 
+  # TODO proper theming
+  xresources.properties = {
+    "*.background" = "#000000";
+    "*.foreground" = "#00C0FF";
+  };
+
   qt = {
     enable = true;
     platformTheme = "qtct";
