@@ -94,7 +94,14 @@
       enable = true;
       bars = {
         top = {
-          theme = "ctp-mocha";
+          settings = {
+            theme = {
+              theme = "ctp-mocha";
+              overrides = {
+                alternating_tint_bg = "#181825";
+              };
+            };
+          };
           icons = "awesome5";
           blocks = [
             {
@@ -125,6 +132,9 @@
                   cmd = "pavucontrol";
                 }
               ];
+            }
+            {
+              block = "notify";
             }
             {
               block = "time";
