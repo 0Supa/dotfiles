@@ -168,6 +168,14 @@
       };
     };
 
+    cron = {
+      enable = true;
+      systemCronJobs = [
+        # send a message to turn off headphones rgb every minute
+        "* * * * *  root  ${lib.getExe pkgs.headsetcontrol} -l 0"
+      ];
+    };
+
     picom.enable = true;
   };
 
@@ -198,6 +206,7 @@
           nitrogen
           feh
           prismlauncher
+          headsetcontrol
         ];
       };
     };
