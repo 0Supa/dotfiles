@@ -265,7 +265,7 @@
 
     xss-lock = {
       enable = true;
-      lockerCommand = "${pkgs.i3lock}/bin/i3lock --color 000000 --nofork";
+      lockerCommand = "${lib.getExe pkgs.i3lock} --color 000000 --nofork";
     };
   };
 

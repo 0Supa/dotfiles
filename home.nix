@@ -165,7 +165,7 @@
     enable = true;
 
     extraConfig = (builtins.readFile ./config/i3/catppuccin-mocha) + ''
-      exec ${pkgs.autorandr}/bin/autorandr default
+      exec ${lib.getExe pkgs.autorandr} default
       exec ${lib.getExe' pkgs.keepassxc "keepassxc"}
       for_window [class="."] border pixel 1
       for_window [class="."] title_window_icon yes
@@ -265,7 +265,7 @@
             size = 10.0;
             style = "Bold";
           };
-          statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs ~/.config/i3status-rust/config-top.toml";
+          statusCommand = "${lib.getExe pkgs.i3status-rust} ~/.config/i3status-rust/config-top.toml";
           colors = {
             background = "$base";
             statusline = "$text";
