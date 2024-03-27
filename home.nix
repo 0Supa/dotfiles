@@ -326,6 +326,32 @@
     "gtk-4.0/gtk-dark.css".source = "${config.gtk.theme.package}/share/themes/${config.gtk.theme.name}/gtk-4.0/gtk-dark.css";
   };
 
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications = {
+      "x-scheme-handler/http" = "firefox.desktop";
+      "x-scheme-handler/https" = "firefox.desktop";
+      "x-scheme-handler/chrome" = "firefox.desktop";
+      "text/html" = "firefox.desktop";
+      "application/x-extension-htm" = "firefox.desktop";
+      "application/x-extension-html" = "firefox.desktop";
+      "application/x-extension-shtml" = "firefox.desktop";
+      "application/xhtml+xml" = "firefox.desktop";
+      "application/x-extension-xhtml" = "firefox.desktop";
+      "application/x-extension-xht" = "firefox.desktop";
+
+      "image/png" = "nsxiv.desktop";
+      "image/jpg" = "nsxiv.desktop";
+      "image/jpeg" = "nsxiv.desktop";
+      "image/gif" = "nsxiv.desktop";
+      "image/webp" = "nsxiv.desktop";
+      "image/heic" = "nsxiv.desktop";
+      "image/apng" = "nsxiv.desktop";
+
+      "inode/directory" = "pcmanfm.desktop";
+    };
+  };
+
   qt = {
     enable = true;
     platformTheme = "qtct";
