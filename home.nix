@@ -166,6 +166,7 @@
 
     extraConfig = (builtins.readFile ./config/i3/catppuccin-mocha) + ''
       exec ${pkgs.autorandr}/bin/autorandr default
+      exec ${lib.getExe' pkgs.keepassxc "keepassxc"}
       for_window [class="."] border pixel 1
       for_window [class="."] title_window_icon yes
     '';
