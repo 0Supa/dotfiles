@@ -204,7 +204,7 @@
           electrum
           chromium
           nitrogen
-          feh
+          nsxiv
           prismlauncher
           headsetcontrol
         ];
