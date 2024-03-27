@@ -51,14 +51,18 @@
       };
 
       shellAliases = {
+        ls = "ls --color=auto --group-directories-first";
         l = "ls";
         la = "ls -a";
         ll = "ls -l";
-        ka = "killall";
+        ka = "killall -I";
         lock = "xset dpms force off";
         dink = "dunstctl history-pop";
         update = "sudo nixos-rebuild switch --flake ~/.dotfiles";
         updatehm = "home-manager switch --flake ~/.dotfiles";
+        ip = "ip -color=auto";
+        grep = "grep --color=auto";
+        vs = "codium";
       };
       history.size = 5000;
       history.path = "${config.xdg.dataHome}/zsh/history";
