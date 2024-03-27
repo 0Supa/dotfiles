@@ -77,6 +77,7 @@
       noto-fonts-emoji
       font-awesome
       iosevka
+      open-dyslexic
     ];
 
     fontconfig = {
@@ -177,6 +178,8 @@
     };
 
     picom.enable = true;
+
+    gvfs.enable = true;
   };
 
   users = {
@@ -190,7 +193,6 @@
           chatterino2
           polybar
           flameshot
-          pcmanfm
           rofi
           vscodium
           nixpkgs-fmt
@@ -207,6 +209,7 @@
           nsxiv
           prismlauncher
           headsetcontrol
+          jre8
         ];
       };
     };
@@ -262,6 +265,11 @@
     dconf.enable = true;
 
     steam.enable = true;
+
+    thunar = {
+      enable = true;
+      plugins = with pkgs.xfce; [ thunar-archive-plugin thunar-volman ];
+    };
 
     xss-lock = {
       enable = true;
