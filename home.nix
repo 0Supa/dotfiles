@@ -63,6 +63,7 @@
         ip = "ip -color=auto";
         grep = "grep --color=auto";
         vs = "codium";
+        s = "kitten ssh";
       };
       history.size = 5000;
       history.path = "${config.xdg.dataHome}/zsh/history";
@@ -165,8 +166,6 @@
     enable = true;
 
     extraConfig = (builtins.readFile ./config/i3/catppuccin-mocha) + ''
-      exec ${lib.getExe pkgs.autorandr} default
-      exec ${lib.getExe' pkgs.keepassxc "keepassxc"}
       for_window [class="."] border pixel 1
       for_window [class="."] title_window_icon yes
     '';
@@ -174,6 +173,12 @@
     config = {
       terminal = "kitty";
       modifier = "Mod1"; # alt
+
+      startup = [
+        { command = "${lib.getExe pkgs.autorandr} default"; }
+        { command = "nvidia-settings --load-config-only"; }
+        { command = "${lib.getExe' pkgs.keepassxc "keepassxc"}"; }
+      ];
 
       keybindings =
         let
