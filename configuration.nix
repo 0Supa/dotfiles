@@ -141,7 +141,7 @@
       enable = true;
       profiles = {
         "default" = {
-          # use `autorandr --fingerprint` on your setup
+          # Use `autorandr --fingerprint` on your setup
           fingerprint = {
             DP-2 = "00ffffffffffff0005e390255a7f00002c1d0104a5361e783b9051a75553a028135054bfef00d1c081803168317c4568457c6168617c023a801871382d40582c4500202f2100001efc7e80887038124018203500202f2100001e000000fc003235393047340a202020202020000000fd001e92a0a021010a20202020202001aa02031ef14b0103051404131f12021190230907078301000065030c001000866f80a07038404030203500202f2100001efe5b80a07038354030203500202f2100001e011d007251d01e206e285500202f2100001eab22a0a050841a3030203600202f2100001a7c2e90a0601a1e4030203600202f2100001a00000000000000f9";
             HDMI-0 = "00ffffffffffff00410ccfc0994f0000071d010380301b782a3935a25952a1270c5054bd4b00d1c09500950fb30081c0818001010101023a801871382d40582c4500dd0c1100001e000000ff005a563031393037303230333737000000fc0050484c2032323356350a202020000000fd00384c1e5311000a20202020202001a7020322f14f010203050607101112131415161f04230917078301000065030c001000023a801871382d40582c4500dd0c1100001e8c0ad08a20e02d10103e9600dd0c11000018011d007251d01e206e285500dd0c1100001e8c0ad090204031200c405500dd0c110000180000000000000000000000000000000000000000004d";
@@ -172,7 +172,7 @@
     cron = {
       enable = true;
       systemCronJobs = [
-        # send a message to turn off headphones rgb every minute
+        # Send a message to turn off headphones rgb every minute
         "* * * * *  root  ${lib.getExe pkgs.headsetcontrol} -l 0"
       ];
     };
@@ -190,26 +190,40 @@
         isNormalUser = true;
         extraGroups = [ "wheel" ];
         packages = with pkgs; [
-          chatterino2
-          polybar
-          flameshot
-          rofi
-          vscodium
-          nixpkgs-fmt
-          spotify
-          picom
-          pkg-config
-          obs-studio
-          gh
-          github-desktop
-          arandr
-          electrum
+          # Internet
+          firefox
           chromium
-          nitrogen
-          nsxiv
-          prismlauncher
-          headsetcontrol
-          jre8
+          chatterino2
+          electrum # BTC wallet
+          monero-gui # XMR wallet
+
+          # Utils/Misc
+          kitty # Terminal
+          neofetch
+          yt-dlp
+          dunst # Notification daemon
+          rofi # App launcher
+          pavucontrol # Volume control
+          arandr # xrandr GUI
+          nitrogen # Wallpaper picker
+          keepassxc # Password manager
+          flameshot # Screenshots
+          headsetcontrol # Used for disabling shitty RGB
+          songrec # Shazam song recognition
+
+          # Code
+          vscodium
+          nixpkgs-fmt # Used for nix formatting in vscode
+          github-desktop
+
+          # Multimedia
+          nsxiv # Image viewer
+          mpv
+          spotify
+          obs-studio
+
+          # Games
+          prismlauncher # Minecraft launcher
         ];
       };
     };
@@ -217,33 +231,27 @@
 
   environment = {
     systemPackages = with pkgs; [
+      # Essential
       vim
       wget
       git
       pkgs-stable.xz
-      dunst
-      firefox
-      neofetch
-      kitty
-      pavucontrol
       htop
       bottom
       nvitop
-      keepassxc
       qt5ct
       adwaita-qt
       adw-gtk3
       go
       nodejs
       zbar
-      yt-dlp
       playerctl
       autorandr
       scrot
-      mpv
       psmisc
       ffmpeg
       compsize
+      pkg-config
       zulu8
       zulu17
     ];
@@ -284,5 +292,5 @@
     };
   };
 
-  system.stateVersion = "23.11"; # do not change
+  system.stateVersion = "23.11"; # Do not change
 }
