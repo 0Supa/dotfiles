@@ -228,6 +228,7 @@
       pavucontrol
       htop
       bottom
+      nvitop
       keepassxc
       qt5ct
       adwaita-qt
