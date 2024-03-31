@@ -14,6 +14,7 @@
         };
         serviceConfig = {
           Type = "simple";
+          User = "supa";
           Restart = "always";
           RestartSec = 5;
           WorkingDirectory = dir;
