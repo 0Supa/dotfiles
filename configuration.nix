@@ -209,7 +209,6 @@
         extraGroups = [ "wheel" ];
         packages = with pkgs; [
           # Internet
-          firefox
           chromium
           chatterino2
           electrum # BTC wallet
@@ -293,6 +292,8 @@
   };
 
   programs = {
+    firefox.enable = true;
+
     zsh.enable = true;
     dconf.enable = true;
 
