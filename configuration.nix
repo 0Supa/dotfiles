@@ -25,7 +25,10 @@
     efi.canTouchEfiVariables = true;
   };
 
-  networking.hostName = "Kappa";
+  networking = {
+    hostName = "Kappa";
+    nameservers = [ "1.1.1.1" "1.0.0.1" ];
+  };
 
   time.timeZone = "Europe/Bucharest";
 
