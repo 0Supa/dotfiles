@@ -71,6 +71,21 @@
 
   nixpkgs.config.allowUnfree = true;
 
+  nixpkgs.overlays = [
+    (self: super: {
+      chatterino2 = super.chatterino2.overrideAttrs
+        (oldAttrs: {
+          nativeBuildInputs = [ super.cmake super.pkg-config ];
+          buildInputs = [ super.openssl super.boost super.qt6.full ];
+          cmakeFlags = [ "-DBUILD_WITH_QT6=ON" "-DBUILD_WITH_QTKEYCHAIN=OFF" ];
+          src = super.chatterino2.src.override {
+            rev = "nightly-build";
+            sha256 = "sha256-7Iyv1iD6UyNiJqqKPjHA56Gh7luOdXuqlX+A7b/iJwA=";
+          };
+        });
+    })
+  ];
+
   fonts = {
     packages = with pkgs; [
       noto-fonts
