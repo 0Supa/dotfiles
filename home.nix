@@ -69,11 +69,13 @@
       history.path = "${config.xdg.dataHome}/zsh/history";
 
       initExtra = ''
+        zstyle ":completion:*" matcher-list "" "m:{a-zA-Z}={A-Za-z}"
+      
         bindkey "^[[1;5C" forward-word
         bindkey "^[[1;5D" backward-word
         bindkey "^H" backward-kill-word
         bindkey "5~" kill-word
-        bindkey "^[[3~" delete-char    
+        bindkey "^[[3~" delete-char
       '';
     };
 
