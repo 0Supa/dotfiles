@@ -369,8 +369,7 @@
     enable = true;
     platformTheme = "qtct";
     style = {
-      name = "Adwaita-Dark";
-      package = pkgs.adwaita-qt;
+      name = "qt5ct-style";
     };
   };
 }
