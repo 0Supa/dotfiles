@@ -2,7 +2,7 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, pkgs, pkgs-stable, callPackage, ... }:
+{ config, lib, inputs, pkgs, pkgs-stable, callPackage, ... }:
 
 {
   imports =
@@ -229,6 +229,7 @@
           headsetcontrol # Used for disabling shitty RGB
           songrec # Shazam song recognition
           font-manager
+          inputs.twitch-hls-client.packages.${pkgs.system}.default
 
           # Code
           vscodium

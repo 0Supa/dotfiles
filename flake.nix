@@ -8,9 +8,11 @@
 
     nixvim.url = "github:nix-community/nixvim";
     nixvim.inputs.nixpkgs.follows = "nixpkgs";
+
+    twitch-hls-client.url = "github:2bc4/twitch-hls-client";
   };
 
-  outputs = { self, nixpkgs, nixpkgs-stable, home-manager, ... }:
+  outputs = { self, nixpkgs, nixpkgs-stable, home-manager, ... }@inputs:
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";
@@ -24,6 +26,7 @@
           modules = [ ./configuration.nix ];
           specialArgs = {
             inherit pkgs-stable;
+            inherit inputs;
           };
         };
       };
