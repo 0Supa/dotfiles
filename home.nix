@@ -14,7 +14,7 @@
     sessionVariables = {
       BROWSER = "${lib.getExe pkgs.firefox}";
       DISPLAY = ":0";
-      EDITOR = "vim";
+      EDITOR = "nvim";
     };
 
     pointerCursor = {
@@ -64,6 +64,7 @@
         grep = "grep --color=auto";
         vs = "codium";
         s = "kitten ssh";
+        v = "nvim";
       };
       history.size = 5000;
       history.path = "${config.xdg.dataHome}/zsh/history";
@@ -90,6 +91,9 @@
         draw_minimal_borders yes
         resize_in_steps yes
         background_opacity 0.8
+
+        symbol_map U+E0A0-U+E0A3,U+E0C0-U+E0C7 PowerlineSymbols
+        symbol_map U+f000-U+f2e0 Font Awesome 6 Free
       '';
     };
 

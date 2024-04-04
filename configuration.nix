@@ -97,6 +97,7 @@
       font-awesome
       iosevka
       open-dyslexic
+      powerline-symbols
     ];
 
     fontconfig = {
@@ -274,6 +275,13 @@
       pkg-config
       zulu8
       zulu17
+      ripgrep
+
+      (inputs.nixvim.legacyPackages.${pkgs.system}.makeNixvimWithModule {
+        inherit pkgs;
+        module = import ./nixvim;
+        # colorschemes.gruvbox.enable = true;
+      })
     ];
   };
 
