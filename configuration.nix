@@ -93,6 +93,7 @@
       noto-fonts-extra
       noto-fonts-color-emoji
       noto-fonts-emoji
+      corefonts
       font-awesome
       iosevka
       open-dyslexic
@@ -227,6 +228,7 @@
           flameshot # Screenshots
           headsetcontrol # Used for disabling shitty RGB
           songrec # Shazam song recognition
+          font-manager
 
           # Code
           vscodium
