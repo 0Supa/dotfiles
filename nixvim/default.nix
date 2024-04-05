@@ -38,12 +38,25 @@
 
   plugins = {
     bufferline.enable = true;
-    lualine.enable = true;
 
     telescope.enable = true;
-    oil.enable = true;
     treesitter.enable = true;
     luasnip.enable = true;
+
+    lualine = {
+      enable = true;
+      iconsEnabled = false;
+    };
+
+    oil = {
+      enable = true;
+      settings = {
+        columns = [
+          "type"
+          "mtime"
+        ];
+      };
+    };
 
     lsp = {
       enable = true;
