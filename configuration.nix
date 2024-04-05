@@ -93,7 +93,7 @@
       noto-fonts-extra
       noto-fonts-color-emoji
       noto-fonts-emoji
-      corefonts
+      # corefonts
       font-awesome
       iosevka
       open-dyslexic
