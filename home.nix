@@ -152,6 +152,73 @@
         };
       };
     };
+
+    mpv = {
+      enable = true;
+      bindings = {
+        G = "osd-msg-bar seek 100 absolute-percent+exact";
+
+        RIGHT = "seek  5 exact"; # forward
+        LEFT = "seek -5 exact"; # backward
+        WHEEL_UP = "seek  5 exact"; # forward
+        WHEEL_DOWN = "seek -5 exact"; # backward
+
+        UP = "seek  30 exact"; # forward
+        DOWN = "seek -30 exact"; # backward
+
+        "Alt+=" = "add video-zoom 0.1";
+      };
+      config = {
+        vo = "gpu";
+        hwdec = "auto";
+        hwdec-codecs = "all";
+        profile = "gpu-hq";
+        dscale = "catmull_rom";
+        #gpu-api="vulkan"; # might cause block artifacts on fast pacing videos (?)
+        ao = "pipewire";
+
+        screenshot-format = "png";
+        screenshot-directory = "~/Pictures";
+        screenshot-tag-colorspace = "no"; # because of gpu-next png tagging bug
+        screenshot-high-bit-depth = "no"; # bloat
+        screenshot-png-compression = 6;
+        screenshot-png-filter = 0;
+
+        keep-open = "yes";
+        force-window = "yes";
+        osd-bar-w = 40;
+        osd-bar-h = 2;
+        volume-max = 200;
+        cursor-autohide = 100;
+        sub-border-size = 2;
+        #title="mpv";
+      };
+      profiles = {
+        stream = {
+          #vd-lavc-threads=1;
+          demuxer-lavf-o-add = "fflags=+nobuffer+fastseek+flush_packets";
+          demuxer-lavf-probe-info = "auto";
+          demuxer-lavf-analyzeduration = 0.1;
+          #demuxer-readahead-secs=30;
+          demuxer-max-bytes = "128M";
+          demuxer-max-back-bytes = "128M";
+          #cache="no";
+          gapless-audio = "yes";
+          prefetch-playlist = "yes";
+          #audio-buffer=0.1;
+          #cache-secs=1;
+          cache-pause = "no";
+          untimed = "yes";
+          video-sync = "audio";
+          force-seekable = "yes";
+          hr-seek = "yes";
+          hr-seek-framedrop = "yes";
+          interpolation = "no";
+          video-latency-hacks = "yes";
+          #stream-buffer-size="4k";
+        };
+      };
+    };
   };
 
   services = {
