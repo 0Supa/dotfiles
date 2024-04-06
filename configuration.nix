@@ -13,7 +13,7 @@
 
   fileSystems = {
     "/".options = [ "compress=zstd" "relatime" ];
-    "/home".options = [ "compress=zstd:4" "relatime" "lazytime" ];
+    "/home".options = [ "compress=zstd" "relatime" "lazytime" ];
     "/nix".options = [ "compress=zstd" "noatime" ];
   };
 
@@ -215,6 +215,7 @@
           chatterino2
           electrum # BTC wallet
           monero-gui # XMR wallet
+          qbittorrent
 
           # Utils/Misc
           kitty # Terminal
@@ -231,6 +232,7 @@
           songrec # Shazam song recognition
           font-manager
           inputs.twitch-hls-client.packages.${pkgs.system}.default
+          scrcpy
 
           # Code
           vscodium
@@ -270,7 +272,7 @@
       autorandr
       scrot
       psmisc
-      ffmpeg
+      ffmpeg-full
       compsize
       pkg-config
       zulu8
