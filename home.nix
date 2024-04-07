@@ -142,6 +142,12 @@
             }
             {
               block = "notify";
+              click = [
+                {
+                  button = "right";
+                  cmd = "dunstctl history-pop";
+                }
+              ];
             }
             {
               block = "time";
