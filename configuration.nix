@@ -244,6 +244,7 @@
           mpv
           spotify
           obs-studio
+          audacity
 
           # Games
           prismlauncher # Minecraft launcher
