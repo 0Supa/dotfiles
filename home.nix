@@ -31,7 +31,7 @@
       ".config/rofi/config.rasi".source = ./config/rofi/config.rasi;
 
       ".local/share/fonts/gg mono regular.ttf".source = ./fonts + "/gg mono regular.ttf";
-      ".local/share/fonts/gg sans regular.woff2".source = ./fonts + "/gg sans regular.woff2";
+      ".local/share/fonts/gg sans regular.woff2".source = ./fonts + "/ggsans-monospaced-num.woff2";
     };
   };
 
