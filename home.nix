@@ -29,6 +29,9 @@
       ".local/share/chatterino/Themes/mocha-mauve.json".source = ./config/chatterino/mocha-mauve.json;
       ".local/share/rofi/themes/catppuccin-mocha.rasi".source = ./config/rofi/catppuccin-mocha.rasi;
       ".config/rofi/config.rasi".source = ./config/rofi/config.rasi;
+
+      ".local/share/fonts/gg mono regular.ttf".source = ./fonts + "/gg mono regular.ttf";
+      ".local/share/fonts/gg sans regular.woff2".source = ./fonts + "/gg sans regular.woff2";
     };
   };
 
@@ -176,7 +179,7 @@
       };
       config = {
         vo = "gpu";
-        hwdec = "auto";
+        hwdec = "auto-copy";
         hwdec-codecs = "all";
         profile = "gpu-hq";
         dscale = "catmull_rom";
