@@ -130,12 +130,9 @@
         xterm.enable = false;
       };
 
-      displayManager = {
-        defaultSession = "none+i3";
-        autoLogin.enable = true;
-        autoLogin.user = "supa";
-        lightdm.autoLogin.timeout = 0;
-        lightdm.greeter.enable = false;
+      displayManager.lightdm = {
+        autoLogin.timeout = 0;
+        greeter.enable = false;
       };
 
       windowManager.i3 = {
@@ -147,6 +144,14 @@
       };
 
       libinput.mouse.accelProfile = "flat";
+    };
+
+    displayManager = {
+      defaultSession = "none+i3";
+      autoLogin = {
+        enable = true;
+        user = "supa";
+      };
     };
 
     pipewire = {
