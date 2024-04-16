@@ -71,20 +71,20 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  nixpkgs.overlays = [
-    (self: super: {
-      chatterino2 = super.chatterino2.overrideAttrs
-        (oldAttrs: {
-          nativeBuildInputs = with super; [ cmake pkg-config ];
-          buildInputs = with super; [ qt6.wrapQtAppsHook qt6.qtbase qt6.qtsvg qt6.qtimageformats qt6.qttools qt6.qt5compat boost openssl ];
-          cmakeFlags = [ "-DBUILD_WITH_QT6=ON" "-DBUILD_WITH_QTKEYCHAIN=OFF" ];
-          src = super.chatterino2.src.override {
-            rev = "nightly-build";
-            sha256 = "sha256-kE8/xWmbqvKX14PBcUDjbs6lJGzu1zezEKdDvSJGXVo=";
-          };
-        });
-    })
-  ];
+  # nixpkgs.overlays = [
+  #   (self: super: {
+  #     chatterino2 = super.chatterino2.overrideAttrs
+  #       (oldAttrs: {
+  #         nativeBuildInputs = with super; [ cmake pkg-config ];
+  #         buildInputs = with super; [ qt6.wrapQtAppsHook qt6.qtbase qt6.qtsvg qt6.qtimageformats qt6.qttools qt6.qt5compat boost openssl ];
+  #         cmakeFlags = [ "-DBUILD_WITH_QT6=ON" "-DBUILD_WITH_QTKEYCHAIN=OFF" ];
+  #         src = super.chatterino2.src.override {
+  #           rev = "nightly-build";
+  #           sha256 = "sha256-kE8/xWmbqvKX14PBcUDjbs6lJGzu1zezEKdDvSJGXVo=";
+  #         };
+  #       });
+  #   })
+  # ];
 
   fonts = {
     packages = with pkgs; [
