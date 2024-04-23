@@ -98,6 +98,7 @@
       iosevka
       open-dyslexic
       powerline-symbols
+      fantasque-sans-mono
     ];
 
     fontconfig = {
@@ -143,7 +144,15 @@
         ];
       };
 
+      xkb = {
+        layout = "us,ro";
+        variant = ",winkeys";
+        options = "grp:win_space_toggle";
+      };
+
       libinput.mouse.accelProfile = "flat";
+
+      config = builtins.readFile ./config/xorg.conf;
     };
 
     displayManager = {
@@ -234,10 +243,12 @@
           keepassxc # Password manager
           flameshot # Screenshots
           headsetcontrol # Used for disabling shitty RGB
+          solaar # Logitech driver
           songrec # Shazam song recognition
           font-manager
           inputs.twitch-hls-client.packages.${pkgs.system}.default
           scrcpy
+          filezilla
 
           # Code
           vscodium
@@ -313,6 +324,8 @@
       nvidiaSettings = true;
       package = config.boot.kernelPackages.nvidiaPackages.beta;
     };
+
+    logitech.wireless.enable = true;
   };
 
   programs = {

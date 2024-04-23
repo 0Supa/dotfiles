@@ -258,7 +258,7 @@
 
       startup = [
         { command = "${lib.getExe pkgs.autorandr} default"; }
-        { command = "nvidia-settings --load-config-only"; }
+        { command = "${lib.getExe pkgs.nvidia-settings} --load-config-only"; }
         { command = "${lib.getExe' pkgs.keepassxc "keepassxc"}"; }
       ];
 
