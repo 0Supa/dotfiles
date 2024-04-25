@@ -9,7 +9,7 @@
     grey: #6c7086;
 
     width: 600;
-    font: "Fantasque Sans Mono 14";
+    font: "Iosevka 14";
 }
 
 element-text, element-icon , mode-switcher {
@@ -71,7 +71,8 @@ element {
 }
 
 element-icon {
-    size: 25px;
+    size: 26px;
+    vertical-align: 0.5; 
 }
 
 element selected {

@@ -87,7 +87,7 @@
       enable = true;
       theme = "Catppuccin-Mocha";
       font = {
-        name = "Fantasque Sans Mono";
+        name = "Monospace";
         size = 12;
       };
       extraConfig = ''
@@ -303,7 +303,7 @@
       ];
 
       fonts = {
-        names = [ "Fantasque Sans Mono" ];
+        names = [ "Monospace" ];
         size = 10.0;
       };
 

@@ -1,7 +1,8 @@
 [global]
-frame_width = 2
+frame_width = 1
 frame_color = "#CBA6F7"
 separator_color = frame
+font = "Monospace 11"
 
 [urgency_low]
 background = "#1E1E2E"
