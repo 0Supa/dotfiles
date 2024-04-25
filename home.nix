@@ -87,7 +87,7 @@
       enable = true;
       theme = "Catppuccin-Mocha";
       font = {
-        name = "Iosevka Term Extended";
+        name = "Fantasque Sans Mono";
         size = 12;
       };
       extraConfig = ''
@@ -258,7 +258,7 @@
 
       startup = [
         { command = "${lib.getExe pkgs.autorandr} default"; }
-        { command = "${lib.getExe pkgs.nvidia-settings} --load-config-only"; }
+        { command = "nvidia-settings --load-config-only"; }
         { command = "${lib.getExe' pkgs.keepassxc "keepassxc"}"; }
       ];
 

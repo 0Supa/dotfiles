@@ -28,6 +28,7 @@
   networking = {
     hostName = "Kappa";
     nameservers = [ "1.1.1.1" "1.0.0.1" ];
+    networkmanager.enable = true;
   };
 
   time.timeZone = "Europe/Bucharest";
@@ -151,8 +152,6 @@
       };
 
       libinput.mouse.accelProfile = "flat";
-
-      config = builtins.readFile ./config/xorg.conf;
     };
 
     displayManager = {
@@ -295,6 +294,7 @@
       zulu8
       zulu17
       ripgrep
+      networkmanagerapplet
 
       (inputs.nixvim.legacyPackages.${pkgs.system}.makeNixvimWithModule {
         inherit pkgs;
