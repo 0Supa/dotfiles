@@ -303,8 +303,8 @@
       ];
 
       fonts = {
-        names = [ "Iosevka" ];
-        size = 9.5;
+        names = [ "Fantasque Sans Mono" ];
+        size = 10.0;
       };
 
       colors = {
@@ -349,7 +349,7 @@
         {
           position = "top";
           fonts = {
-            size = 10.0;
+            size = 11.0;
             style = "Bold";
           };
           statusCommand = "${lib.getExe pkgs.i3status-rust} ~/.config/i3status-rust/config-top.toml";

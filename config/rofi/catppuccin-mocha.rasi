@@ -9,7 +9,7 @@
     grey: #6c7086;
 
     width: 600;
-    font: "Iosevka 14";
+    font: "Fantasque Sans Mono 14";
 }
 
 element-text, element-icon , mode-switcher {

@@ -105,7 +105,7 @@
     fontconfig = {
       enable = true;
       defaultFonts = {
-        monospace = [ "Iosevka Extended" ];
+        monospace = [ "Fantasque Sans Mono" ];
         serif = [ "Noto Serif" ];
         sansSerif = [ "Noto Sans" "Noto Color Emoji" ];
       };
