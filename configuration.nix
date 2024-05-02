@@ -100,6 +100,7 @@
       open-dyslexic
       powerline-symbols
       fantasque-sans-mono
+      inter
     ];
 
     fontconfig = {
