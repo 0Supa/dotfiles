@@ -221,7 +221,7 @@
     users = {
       supa = {
         isNormalUser = true;
-        extraGroups = [ "wheel" ];
+        extraGroups = [ "wheel" "gamemode" ];
         packages = with pkgs; [
           # Internet
           chromium
