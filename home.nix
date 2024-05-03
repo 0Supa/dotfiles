@@ -68,6 +68,7 @@
         vs = "codium";
         s = "kitten ssh";
         v = "nvim";
+        neofetch = "fastfetch";
       };
       history.size = 5000;
       history.path = "${config.xdg.dataHome}/zsh/history";

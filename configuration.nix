@@ -233,7 +233,7 @@
 
           # Utils/Misc
           kitty # Terminal
-          neofetch
+          fastfetch
           yt-dlp
           dunst # Notification daemon
           rofi # App launcher
