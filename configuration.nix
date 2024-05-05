@@ -296,6 +296,7 @@
       zulu17
       ripgrep
       networkmanagerapplet
+      config.boot.kernelPackages.cpupower
 
       (inputs.nixvim.legacyPackages.${pkgs.system}.makeNixvimWithModule {
         inherit pkgs;
