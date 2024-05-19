@@ -17,12 +17,16 @@
     "/nix".options = [ "compress=zstd" "noatime" ];
   };
 
-  boot.loader = {
-    systemd-boot = {
-      enable = true;
-      consoleMode = "max";
+  boot = {
+    kernelPackages = pkgs.linuxKernel.packages.linux_zen;
+    loader = {
+      systemd-boot = {
+        enable = true;
+        consoleMode = "max";
+        # memtest86.enable = true;
+      };
+      efi.canTouchEfiVariables = true;
     };
-    efi.canTouchEfiVariables = true;
   };
 
   networking = {
