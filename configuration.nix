@@ -119,7 +119,14 @@
   };
 
   security = {
-    sudo.wheelNeedsPassword = false;
+    doas.extraRules = [{
+      enable = true;
+      groups = [ "wheel" ];
+      keepEnv = true;
+      persist = true;
+    }];
+
+    sudo.enable = false;
     rtkit.enable = true;
   };
 
