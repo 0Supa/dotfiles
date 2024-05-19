@@ -8,6 +8,7 @@ Personal desktop NixOS configuration.
 
 ```sh
 git clone https://github.com/0Supa/dotfiles ~/.dotfiles
-sudo nixos-rebuild switch --flake ~/.dotfiles#Kappa
+# replace with sudo if applicable
+doas nixos-rebuild switch --flake ~/.dotfiles#Kappa
 home-manager switch --flake ~/.dotfiles
 ```
