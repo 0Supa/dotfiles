@@ -123,12 +123,14 @@
   };
 
   security = {
-    doas.extraRules = [{
+    doas = {
       enable = true;
-      groups = [ "wheel" ];
-      keepEnv = true;
-      persist = true;
-    }];
+      extraRules = [{
+        groups = [ "wheel" ];
+        keepEnv = true;
+        persist = true;
+      }];
+    };
 
     sudo.enable = false;
     rtkit.enable = true;
