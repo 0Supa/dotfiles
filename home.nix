@@ -420,7 +420,9 @@
       "x-scheme-handler/http" = "firefox.desktop";
       "x-scheme-handler/https" = "firefox.desktop";
       "x-scheme-handler/chrome" = "firefox.desktop";
-      "text/html" = "firefox.desktop";
+      "text/html" = "codium.desktop";
+      "application/octet-stream" = "codium.desktop";
+      "application/x-zerosize" = "codium.desktop";
       "application/x-extension-htm" = "firefox.desktop";
       "application/x-extension-html" = "firefox.desktop";
       "application/x-extension-shtml" = "firefox.desktop";
@@ -435,8 +437,9 @@
       "image/webp" = "nsxiv.desktop";
       "image/heic" = "nsxiv.desktop";
       "image/apng" = "nsxiv.desktop";
+      "image/svg+xml" = "codium.desktop";
 
-      "inode/directory" = "pcmanfm.desktop";
+      "inode/directory" = "thunar.desktop";
     };
   };
 
@@ -448,7 +451,7 @@
 
   qt = {
     enable = true;
-    platformTheme = "qtct";
+    platformTheme.name = "qtct";
     style = {
       name = "qt5ct-style";
     };
