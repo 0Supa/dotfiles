@@ -267,6 +267,8 @@
           inputs.twitch-hls-client.packages.${pkgs.system}.default
           scrcpy
           filezilla
+          virtualbox
+          curlie
 
           # Code
           vscodium
@@ -315,6 +317,7 @@
       ripgrep
       networkmanagerapplet
       config.boot.kernelPackages.cpupower
+      busybox
 
       (inputs.nixvim.legacyPackages.${pkgs.system}.makeNixvimWithModule {
         inherit pkgs;
