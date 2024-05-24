@@ -274,6 +274,7 @@
           vscodium
           nixpkgs-fmt # Used for nix formatting in vscode
           github-desktop
+          helix
 
           # Multimedia
           nsxiv # Image viewer
