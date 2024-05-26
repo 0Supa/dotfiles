@@ -282,6 +282,7 @@
           spotify
           obs-studio
           audacity
+          jellyfin-media-player
 
           # Games
           prismlauncher # Minecraft launcher
