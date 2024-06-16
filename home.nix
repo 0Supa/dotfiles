@@ -13,8 +13,9 @@
 
     sessionVariables = {
       BROWSER = "${lib.getExe pkgs.firefox}";
-      DISPLAY = ":0";
+      #DISPLAY = ":0";
       EDITOR = "nvim";
+      NIXOS_OZONE_WL = "1";
     };
 
     pointerCursor = {
@@ -23,6 +24,13 @@
       size = 16;
       x11.enable = true;
       gtk.enable = true;
+    };
+
+    swaylock = {
+      enable = true;
+      settings = {
+        color = "000000";
+      };
     };
 
     file = {
@@ -260,7 +268,7 @@
     };
   };
 
-  xsession.windowManager.i3 = {
+  wayland.windowManager.sway = {
     enable = true;
 
     extraConfig = (builtins.readFile ./config/i3/catppuccin-mocha) + ''
@@ -273,14 +281,30 @@
       modifier = "Mod1"; # alt
 
       startup = [
-        { command = "${lib.getExe pkgs.autorandr} default"; }
         { command = "nvidia-settings --load-config-only"; }
         { command = "${lib.getExe' pkgs.keepassxc "keepassxc"}"; }
       ];
 
+      input = {
+        "*" = {
+          accel_profile = "flat";
+        };
+      };
+
+      output = {
+        HDMI-A-1 = {
+          mode = "1920x1080@60Hz";
+          pos = "0 0";
+        };
+        DP-3 = {
+          mode = "1920x1080@144Hz";
+          pos = "1920 0";
+        };
+      };
+
       keybindings =
         let
-          cfg = config.xsession.windowManager.i3.config;
+          cfg = config.wayland.windowManager.sway.config;
           modifier = cfg.modifier;
           terminal = cfg.terminal;
         in
@@ -292,8 +316,8 @@
           "XF86AudioPause" = "exec --no-startup-id playerctl play-pause";
           "XF86AudioNext" = "exec --no-startup-id playerctl next";
           "XF86AudioPrev" = "exec --no-startup-id playerctl previous";
-          "F9" = "exec --no-startup-id flameshot gui";
-          "Print" = "exec --no-startup-id flameshot gui";
+          "F9" = "exec --no-startup-id grim -g \"$(slurp)\" - | wl-copy --type=image/png";
+          "Print" = "exec --no-startup-id grim -g \"$(slurp)\" - | wl-copy --type=image/png";
           "${modifier}+d" = "exec --no-startup-id rofi -show drun";
           "${modifier}+Tab" = "exec --no-startup-id rofi -show window";
           "Control+${modifier}+t" = "exec --no-startup-id ${terminal}";
@@ -307,6 +331,7 @@
       focus = {
         followMouse = false;
         wrapping = "no";
+        mouseWarping = false;
       };
 
       workspaceAutoBackAndForth = true;

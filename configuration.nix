@@ -19,6 +19,8 @@
 
   boot = {
     kernelPackages = pkgs.linuxKernel.packages.linux_zen;
+    kernelParams = [ "nvidia_drm.modeset=1" ];
+
     loader = {
       systemd-boot = {
         enable = true;
@@ -158,37 +160,6 @@
   };
 
   services = {
-    xserver = {
-      enable = true;
-
-      videoDrivers = [ "nvidia" ];
-
-      desktopManager = {
-        xterm.enable = false;
-      };
-
-      displayManager.lightdm = {
-        autoLogin.timeout = 0;
-        greeter.enable = false;
-      };
-
-      windowManager.i3 = {
-        enable = true;
-        extraPackages = with pkgs; [
-          i3lock
-          xss-lock
-        ];
-      };
-
-      xkb = {
-        layout = "us,ro";
-        variant = ",winkeys";
-        options = "grp:win_space_toggle";
-      };
-
-      libinput.mouse.accelProfile = "flat";
-    };
-
     displayManager = {
       defaultSession = "none+i3";
       autoLogin = {
@@ -245,7 +216,7 @@
       ];
     };
 
-    picom.enable = true;
+    gnome.gnome-keyring.enable = true;
 
     gvfs.enable = true;
   };
@@ -267,16 +238,19 @@
           soulseekqt
 
           # Utils/Misc
+          swaylock
           kitty # Terminal
           fastfetch
           yt-dlp
-          dunst # Notification daemon
+          mako # Notification daemon
+          wl-clipboard
           rofi # App launcher
           pavucontrol # Volume control
           arandr # xrandr GUI
           nitrogen # Wallpaper picker
           keepassxc # Password manager
-          flameshot # Screenshots
+          grim
+          slurp
           headsetcontrol # Used for disabling shitty RGB
           solaar # Logitech driver
           songrec # Shazam song recognition
@@ -286,6 +260,7 @@
           filezilla
           virtualbox
           curlie
+          glfw-wayland-minecraft
 
           # Code
           vscodium
@@ -322,7 +297,6 @@
       adwaita-qt
       adw-gtk3
       go
-      nodejs
       zbar
       playerctl
       autorandr
@@ -379,14 +353,14 @@
     steam.enable = true;
     gamemode.enable = true;
 
+    sway = {
+      enable = true;
+      wrapperFeatures.gtk = true;
+    };
+
     thunar = {
       enable = true;
       plugins = with pkgs.xfce; [ thunar-archive-plugin thunar-volman ];
-    };
-
-    xss-lock = {
-      enable = true;
-      lockerCommand = "${lib.getExe pkgs.i3lock} --color 000000 --nofork";
     };
   };
 
