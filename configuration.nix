@@ -108,7 +108,7 @@
             owner = "2547techno";
             repo = "technorino";
             rev = "nightly-build";
-            sha256 = "sha256-x69iiJIUWCuXw4SDV7hiE3h9+W9hJn4CLHvvfvg4P0g=";
+            sha256 = "sha256-PY+K1l29wwG8ddqTxOwkbKb8CQoOBwbOeCgn0VTDptM=";
           };
         });
     })
@@ -236,6 +236,7 @@
           monero-gui # XMR wallet
           qbittorrent
           soulseekqt
+          webcord-vencord
 
           # Utils/Misc
           swaylock
@@ -261,6 +262,7 @@
           virtualbox
           curlie
           glfw-wayland-minecraft
+          doas-sudo-shim
 
           # Code
           vscodium
