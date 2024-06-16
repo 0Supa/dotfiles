@@ -106,7 +106,7 @@
             owner = "2547techno";
             repo = "technorino";
             rev = "nightly-build";
-            sha256 = "sha256-x69iiJIUWCuXw4SDV7hiE3h9+W9hJn4CLHvvfvg4P0g=";
+            sha256 = "sha256-PY+K1l29wwG8ddqTxOwkbKb8CQoOBwbOeCgn0VTDptM=";
           };
         });
     })
@@ -185,9 +185,9 @@
         variant = ",winkeys";
         options = "grp:win_space_toggle";
       };
-    };
 
-    libinput.mouse.accelProfile = "flat";
+      libinput.mouse.accelProfile = "flat";
+    };
 
     displayManager = {
       defaultSession = "none+i3";
@@ -265,6 +265,7 @@
           monero-gui # XMR wallet
           qbittorrent
           soulseekqt
+          webcord-vencord
 
           # Utils/Misc
           kitty # Terminal
@@ -286,6 +287,7 @@
           filezilla
           virtualbox
           curlie
+          doas-sudo-shim
 
           # Code
           vscodium
@@ -297,10 +299,7 @@
           nsxiv # Image viewer
           mpv
           spotify
-
           obs-studio
-          obs-studio-plugins.obs-pipewire-audio-capture
-
           audacity
           jellyfin-media-player
 
