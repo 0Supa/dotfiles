@@ -185,9 +185,9 @@
         variant = ",winkeys";
         options = "grp:win_space_toggle";
       };
-
-      libinput.mouse.accelProfile = "flat";
     };
+
+    libinput.mouse.accelProfile = "flat";
 
     displayManager = {
       defaultSession = "none+i3";
