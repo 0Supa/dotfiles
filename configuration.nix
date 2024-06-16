@@ -27,6 +27,10 @@
       };
       efi.canTouchEfiVariables = true;
     };
+    tmp = {
+      useTmpfs = true;
+      tmpfsSize = "100%";
+    };
   };
 
   networking = {
@@ -260,6 +264,7 @@
           electrum # BTC wallet
           monero-gui # XMR wallet
           qbittorrent
+          soulseekqt
 
           # Utils/Misc
           kitty # Terminal
