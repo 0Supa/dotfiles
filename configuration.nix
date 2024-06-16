@@ -185,9 +185,9 @@
         variant = ",winkeys";
         options = "grp:win_space_toggle";
       };
-
-      libinput.mouse.accelProfile = "flat";
     };
+
+    libinput.mouse.accelProfile = "flat";
 
     displayManager = {
       defaultSession = "none+i3";
@@ -297,7 +297,10 @@
           nsxiv # Image viewer
           mpv
           spotify
+
           obs-studio
+          obs-studio-plugins.obs-pipewire-audio-capture
+
           audacity
           jellyfin-media-player
 
