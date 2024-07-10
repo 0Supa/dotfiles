@@ -12,9 +12,9 @@
     ];
 
   fileSystems = {
-    "/".options = [ "compress=zstd" "relatime" ];
-    "/home".options = [ "compress=zstd" "relatime" "lazytime" ];
-    "/nix".options = [ "compress=zstd" "noatime" ];
+    "/".options = [ "compress=zstd" "relatime" "commit=60" ];
+    "/home".options = [ "compress=zstd" "relatime" "lazytime" "commit=60" ];
+    "/nix".options = [ "compress=zstd" "noatime" "commit=60" ];
   };
 
   boot = {
@@ -285,15 +285,20 @@
           inputs.twitch-hls-client.packages.${pkgs.system}.default
           scrcpy
           filezilla
-          virtualbox
           curlie
-          doas-sudo-shim
+          gnupg
+          kleopatra
+          session-desktop
+          bottles
+          heroic
 
           # Code
           vscodium
           nixpkgs-fmt # Used for nix formatting in vscode
           github-desktop
           helix
+          bruno
+          insomnia
 
           # Multimedia
           nsxiv # Image viewer
@@ -301,6 +306,7 @@
           spotify
           obs-studio
           audacity
+          kdenlive
           jellyfin-media-player
 
           # Games
@@ -339,6 +345,7 @@
       networkmanagerapplet
       config.boot.kernelPackages.cpupower
       busybox
+      libclang
 
       (inputs.nixvim.legacyPackages.${pkgs.system}.makeNixvimWithModule {
         inherit pkgs;
@@ -381,6 +388,8 @@
     steam.enable = true;
     gamemode.enable = true;
 
+    gnupg.agent.enable = true;
+
     thunar = {
       enable = true;
       plugins = with pkgs.xfce; [ thunar-archive-plugin thunar-volman ];
@@ -391,6 +400,9 @@
       lockerCommand = "${lib.getExe pkgs.i3lock} --color 000000 --nofork";
     };
   };
+
+  virtualisation.virtualbox.host.enable = true;
+  users.extraGroups.vboxusers.members = [ "supa" ];
 
   system.stateVersion = "23.11"; # Do not change
 }
