@@ -303,6 +303,7 @@
           session-desktop
           bottles
           heroic
+          birdtray
 
           # Code
           vscodium
