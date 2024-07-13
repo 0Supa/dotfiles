@@ -73,14 +73,27 @@
     };
 
     settings = {
+      trusted-users = [ "root" "supa" ];
       experimental-features = [ "nix-command" "flakes" ];
       auto-optimise-store = true;
       warn-dirty = false;
 
       substituters = [
+        "https://nix-community.cachix.org"
         "https://cache.nixos.org"
       ];
     };
+
+    buildMachines = [
+      {
+        hostName = "cino";
+        sshUser = "supa";
+        sshKey = "/home/supa/.ssh/id_ed25519";
+        system = "x86_64-linux";
+        maxJobs = 3;
+      }
+    ];
+    distributedBuilds = true;
   };
 
   nixpkgs.config.allowUnfree = true;
@@ -106,7 +119,7 @@
             owner = "2547techno";
             repo = "technorino";
             rev = "nightly-build";
-            sha256 = "sha256-PY+K1l29wwG8ddqTxOwkbKb8CQoOBwbOeCgn0VTDptM=";
+            sha256 = "sha256-MaK66P6mOAx0FkVEKRy3UwFz6J92zlq+V/YO/HQ8zco==";
           };
         });
     })
@@ -261,11 +274,12 @@
           # Internet
           chromium
           technorino
-          electrum # BTC wallet
-          monero-gui # XMR wallet
+          pkgs-stable.electrum # BTC wallet
+          # monero-gui # XMR wallet
           qbittorrent
           soulseekqt
           webcord-vencord
+          thunderbird
 
           # Utils/Misc
           kitty # Terminal
@@ -279,10 +293,8 @@
           keepassxc # Password manager
           flameshot # Screenshots
           headsetcontrol # Used for disabling shitty RGB
-          solaar # Logitech driver
           songrec # Shazam song recognition
           font-manager
-          inputs.twitch-hls-client.packages.${pkgs.system}.default
           scrcpy
           filezilla
           curlie
@@ -322,7 +334,7 @@
       vim
       wget
       git
-      pkgs-stable.xz
+      xz
       htop
       bottom
       nvitop
@@ -356,10 +368,8 @@
   };
 
   hardware = {
-    opengl = {
+    graphics = {
       enable = true;
-      driSupport = true;
-      driSupport32Bit = true;
       extraPackages = with pkgs; [
         intel-media-driver # LIBVA_DRIVER_NAME=iHD
         intel-vaapi-driver # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
@@ -373,10 +383,9 @@
       powerManagement.finegrained = false;
       open = false;
       nvidiaSettings = true;
-      package = config.boot.kernelPackages.nvidiaPackages.beta;
     };
 
-    logitech.wireless.enable = true;
+    # logitech.wireless.enable = true;
   };
 
   programs = {
