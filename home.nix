@@ -364,6 +364,7 @@
       bars = [
         {
           position = "top";
+          trayOutput = "primary";
           fonts = {
             size = 11.0;
             style = "Bold";
