@@ -200,7 +200,10 @@
       };
     };
 
-    libinput.mouse.accelProfile = "flat";
+    libinput.mouse = {
+      accelProfile = "flat";
+      middleEmulation = false;
+    };
 
     displayManager = {
       defaultSession = "none+i3";
@@ -280,6 +283,7 @@
           soulseekqt
           webcord-vencord
           thunderbird
+          discord
 
           # Utils/Misc
           kitty # Terminal
@@ -304,6 +308,9 @@
           bottles
           heroic
           birdtray
+          peazip
+          dbgate
+          xmousepasteblock
 
           # Code
           vscodium
@@ -359,6 +366,10 @@
       config.boot.kernelPackages.cpupower
       busybox
       libclang
+      lua54Packages.lua
+      lua54Packages.luacheck
+      lua54Packages.luarepl
+      luaformatter
 
       (inputs.nixvim.legacyPackages.${pkgs.system}.makeNixvimWithModule {
         inherit pkgs;
