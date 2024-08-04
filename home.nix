@@ -276,6 +276,7 @@
         { command = "${lib.getExe pkgs.autorandr} default"; }
         { command = "nvidia-settings --load-config-only"; }
         { command = "${lib.getExe' pkgs.keepassxc "keepassxc"}"; }
+        { command = "${lib.getExe pkgs.xmousepasteblock}"; }
       ];
 
       keybindings =
