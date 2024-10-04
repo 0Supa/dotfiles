@@ -10,5 +10,4 @@ Personal desktop NixOS configuration.
 git clone https://github.com/0Supa/dotfiles ~/.dotfiles
 # replace with sudo if applicable
 doas nixos-rebuild switch --flake ~/.dotfiles#Kappa
-home-manager switch --flake ~/.dotfiles
 ```
