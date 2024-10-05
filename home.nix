@@ -50,6 +50,7 @@
 
       startup = [
         { command = "nvidia-settings --load-config-only"; }
+        { command = ''swayidle timeout 15 "pgrep -x swaylock && swaymsg \"output * dpms off\"" resume "swaymsg \"output * dpms on\""''; }
       ];
 
       input = {
@@ -92,6 +93,7 @@
           "${modifier}+d" = "exec ${lib.getExe pkgs.fuzzel}";
           "Control+${modifier}+t" = "exec ${terminal}";
           "Mod4+d" = "workspace 5; workspace 2";
+          "Mod4+l" = "exec swaylock -f";
 
           # move focused workspace between monitors
           "${modifier}+Shift+comma" = "move workspace to output right";
