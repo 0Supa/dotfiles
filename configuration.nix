@@ -156,7 +156,6 @@
           gnupg
           kleopatra
           session-desktop
-          peazip
           dbgate
 
           # Code
@@ -225,6 +224,8 @@
       enable = true;
       plugins = with pkgs.xfce; [ thunar-archive-plugin thunar-volman ];
     };
+
+    file-roller.enable = true;
   };
 
   environment = {
