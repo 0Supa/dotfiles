@@ -223,10 +223,7 @@
         la = "ls -a";
         ll = "ls -l";
         ka = "killall -I";
-        lock = "xset dpms force off";
-        dink = "dunstctl history-pop";
         update = "doas nixos-rebuild switch --flake ~/.dotfiles";
-        updatehm = "rm /home/supa/.config/mimeapps.list; home-manager switch --flake ~/.dotfiles";
         ip = "ip -color=auto";
         grep = "grep --color=auto";
         vs = "codium";
