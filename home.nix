@@ -230,6 +230,7 @@
         s = "kitten ssh";
         v = "vim";
         neofetch = "fastfetch";
+        sudo = "doas";
       };
       history.size = 5000;
       history.path = "${config.xdg.dataHome}/zsh/history";
