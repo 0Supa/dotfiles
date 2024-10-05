@@ -29,7 +29,7 @@
     ];
 
     pointerCursor = {
-      name = "BreezeX-RosePine-Linux";
+      name = "BreezeX-RosePineDawn-Linux";
       package = pkgs.rose-pine-cursor;
       size = 18;
       x11.enable = true;
@@ -292,8 +292,8 @@
             }
             {
               block = "memory";
-              format = " $icon $mem_total_used_percents.eng(w:2) ";
-              format_alt = " $icon_swap $swap_used_percents.eng(w:2) ";
+              format = " $icon $mem_used_percents.eng(w:2) ";
+              # format_alt = " $icon_swap $swap_used_percents.eng(w:2) ";
             }
             {
               block = "temperature";
