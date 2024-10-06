@@ -164,6 +164,8 @@
           github-desktop
           helix
           insomnia
+          gh
+          lazygit
           # LSP
           gopls
           typescript-language-server
