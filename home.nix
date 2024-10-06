@@ -413,6 +413,43 @@
     };
   };
 
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications = {
+      "inode/directory" = "thunar.desktop";
+
+      "applications/x-www-browser" = "firefox.desktop";
+      "x-scheme-handler/http" = "firefox.desktop";
+      "x-scheme-handler/https" = "firefox.desktop";
+      "x-scheme-handler/chrome" = "firefox.desktop";
+      "x-scheme-handler/about" = "firefox.desktop";
+      "x-scheme-handler/unknown" = "firefox.desktop";
+      "application/x-extension-htm" = "firefox.desktop";
+      "application/x-extension-html" = "firefox.desktop";
+      "application/x-extension-shtml" = "firefox.desktop";
+      "application/xhtml+xml" = "firefox.desktop";
+      "application/x-extension-xhtml" = "firefox.desktop";
+      "application/x-extension-xht" = "firefox.desktop";
+      "application/pdf" = "firefox.desktop";
+
+      "text/html" = "codium.desktop";
+      "text/plain" = "codium.desktop";
+      "application/octet-stream" = "codium.desktop";
+      "application/x-zerosize" = "codium.desktop";
+
+      "image/png" = "nsxiv.desktop";
+      "image/jpg" = "nsxiv.desktop";
+      "image/jpeg" = "nsxiv.desktop";
+      "image/gif" = "nsxiv.desktop";
+      "image/webp" = "nsxiv.desktop";
+      "image/heic" = "nsxiv.desktop";
+      "image/apng" = "nsxiv.desktop";
+      "image/svg+xml" = "nsxiv.desktop";
+
+      "video/*" = "mpv.desktop";
+    };
+  };
+
   xresources.properties = {
     "*.background" = "#000000";
     "*.foreground" = "#00C0FF";

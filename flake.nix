@@ -32,14 +32,17 @@
 
             home-manager.nixosModules.home-manager
             {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                backupFileExtension = "hm-bkp";
 
-              home-manager.users.supa = {
-                imports = [
-                  ./home.nix
-                  catppuccin.homeManagerModules.catppuccin
-                ];
+                users.supa = {
+                  imports = [
+                    ./home.nix
+                    catppuccin.homeManagerModules.catppuccin
+                  ];
+                };
               };
             }
           ];
