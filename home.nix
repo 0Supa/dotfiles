@@ -51,6 +51,7 @@
       startup = [
         { command = "nvidia-settings --load-config-only"; }
         { command = ''swayidle timeout 15 "pgrep -x swaylock && swaymsg \"output * dpms off\"" resume "swaymsg \"output * dpms on\""''; }
+        { command = "wl-paste --primary --watch wl-copy --primary --clear"; }
       ];
 
       input = {
