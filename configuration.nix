@@ -164,6 +164,10 @@
           github-desktop
           helix
           insomnia
+          # LSP
+          gopls
+          typescript-language-server
+          nil
 
           # Multimedia
           nsxiv # Image viewer
