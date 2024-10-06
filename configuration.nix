@@ -265,7 +265,7 @@
       BROWSER = "${lib.getExe pkgs.firefox}";
       EDITOR = "vim";
 
-      NIXOS_OZONE_WL = "1";
+      # NIXOS_OZONE_WL = "1"; # causes flickering in electron apps
       LIBVA_DRIVER_NAME = "nvidia";
       XDG_SESSION_TYPE = "wayland";
       GBM_BACKEND = "nvidia-drm";
