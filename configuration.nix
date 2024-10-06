@@ -129,6 +129,7 @@
         isNormalUser = true;
         description = "Supa";
         extraGroups = [ "wheel" "gamemode" ];
+        # upkg
         packages = with pkgs; [
           # Internet
           chromium
