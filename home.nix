@@ -322,6 +322,7 @@
 
     mpv = {
       enable = true;
+      catppuccin.enable = false;
       bindings = {
         G = "osd-msg-bar seek 100 absolute-percent+exact";
 
