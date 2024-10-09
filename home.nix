@@ -230,6 +230,7 @@
         vs = "codium";
         s = "kitten ssh";
         v = "vim";
+        e = "hx";
         neofetch = "fastfetch";
         sudo = "doas";
       };

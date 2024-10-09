@@ -270,7 +270,7 @@
 
     sessionVariables = {
       BROWSER = "${lib.getExe pkgs.firefox}";
-      EDITOR = "vim";
+      EDITOR = "${lib.getExe pkgs.helix}";
 
       # NIXOS_OZONE_WL = "1"; # causes flickering in electron apps
       LIBVA_DRIVER_NAME = "nvidia";
