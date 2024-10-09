@@ -313,6 +313,7 @@
         technorino = super.chatterino2.overrideAttrs
           (oldAttrs: {
             nativeBuildInputs = with super; [ cmake pkg-config ];
+            # builds without qt wayland support to avoid weird behavior
             buildInputs = with super; [ qt6.wrapQtAppsHook qt6.qtbase qt6.qtsvg qt6.qtimageformats qt6.qttools qt6.qt5compat boost openssl ];
             cmakeFlags = [ "-DBUILD_WITH_QT6=ON" "-DBUILD_WITH_QTKEYCHAIN=OFF" ];
             src = super.chatterino2.src.override {

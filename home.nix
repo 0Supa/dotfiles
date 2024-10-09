@@ -50,7 +50,7 @@
 
       startup = [
         { command = "nvidia-settings --load-config-only"; }
-        { command = ''swayidle timeout 15 "pgrep -x swaylock && swaymsg \"output * dpms off\"" resume "swaymsg \"output * dpms on\""''; }
+        { command = ''swayidle timeout 15 "pgrep -x swaylock && swaymsg \"output * power off\"" resume "swaymsg \"output * power on\""''; }
         { command = "wl-paste --primary --watch wl-copy --primary --clear"; }
       ];
 
