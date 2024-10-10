@@ -104,7 +104,7 @@
       enable = true;
       settings = {
         default_session = {
-          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd \"sway --unsupported-gpu\"";
+          command = ''${lib.getExe pkgs.greetd.tuigreet} --time --cmd "sway --unsupported-gpu"'';
           user = "supa";
         };
       };
@@ -159,9 +159,8 @@
           session-desktop
           dbgate
 
-          # Code
+          # Dev
           vscodium
-          nixpkgs-fmt # Used for nix formatting in vscode
           github-desktop
           helix
           insomnia
@@ -171,6 +170,7 @@
           gopls
           typescript-language-server
           nil
+          nixpkgs-fmt # Used for nix formatting in vscode
 
           # Multimedia
           nsxiv # Image viewer
@@ -179,7 +179,6 @@
           obs-studio
           audacity
           kdenlive
-          jellyfin-media-player
 
           # Games
           prismlauncher # Minecraft launcher
