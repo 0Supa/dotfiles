@@ -216,7 +216,7 @@
       defaultKeymap = "emacs";
 
       localVariables = {
-        PS1 = "%F{240}[%F{120}%n%f@%F{cyan}%m %F{139}%~%F{240}]%f$ ";
+        PS1 = "%F{240}[%F{183}%n%f@%F{117}%m %F{169}%~%F{240}]%f$ ";
       };
 
       shellAliases = {
