@@ -35,7 +35,7 @@
               home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
-                backupFileExtension = "hm-bkp";
+                backupFileExtension = "hm-bkp-${builtins.toString builtins.currentTime}";
 
                 users.supa = {
                   imports = [
