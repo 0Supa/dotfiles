@@ -265,6 +265,7 @@
       wl-clipboard
       mako
       nvidia-vaapi-driver
+      dig
     ];
 
     sessionVariables = {
