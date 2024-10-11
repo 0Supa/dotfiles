@@ -113,6 +113,7 @@
         { output = "DP-2"; workspace = "1"; }
         { output = "DP-2"; workspace = "2"; }
         { output = "HDMI-A-1"; workspace = "5"; }
+        { output = "HDMI-A-1"; workspace = "9"; }
         { output = "HDMI-A-1"; workspace = "10"; }
       ];
 
