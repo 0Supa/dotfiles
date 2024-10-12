@@ -90,7 +90,7 @@
           "XF86AudioNext" = "exec playerctl next";
           "XF86AudioPrev" = "exec playerctl previous";
           # "F9" = "exec grim -g \"$(slurp)\" - | wl-copy --type=image/png";
-          "Print" = ''exec grim -g "$(slurp)" - | wl-copy --type=image/png'';
+          "Print" = "exec ${lib.getExe pkgs.grimblast} --freeze copy area";
           "${modifier}+d" = "exec ${lib.getExe pkgs.fuzzel}";
           "Control+${modifier}+t" = "exec ${terminal}";
           "Mod4+d" = "workspace 5; workspace 2";
