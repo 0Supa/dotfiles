@@ -272,6 +272,11 @@
       BROWSER = "${lib.getExe pkgs.firefox}";
       EDITOR = "${lib.getExe pkgs.helix}";
 
+      SDL_VIDEODRIVER = "wayland";
+      QT_QPA_PLATFORM = "wayland";
+      XDG_CURRENT_DESKTOP = "wayland";
+      XDG_SESSION_DESKTOP = "wayland";
+
       # NIXOS_OZONE_WL = "1"; # causes flickering in electron apps
       LIBVA_DRIVER_NAME = "nvidia";
       XDG_SESSION_TYPE = "wayland";
