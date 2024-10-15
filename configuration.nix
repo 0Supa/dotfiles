@@ -132,6 +132,7 @@
         # upkg
         packages = with pkgs; [
           # Internet
+          librewolf
           chromium
           technorino
           pkgs-stable.electrum # BTC wallet
