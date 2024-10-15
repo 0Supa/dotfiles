@@ -274,7 +274,7 @@
       EDITOR = "${lib.getExe pkgs.helix}";
 
       SDL_VIDEODRIVER = "wayland";
-      QT_QPA_PLATFORM = "wayland";
+      QT_QPA_PLATFORM = "xcb";
       XDG_CURRENT_DESKTOP = "wayland";
       XDG_SESSION_DESKTOP = "wayland";
 
