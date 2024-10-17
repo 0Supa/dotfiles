@@ -72,6 +72,7 @@
         DP-2 = {
           mode = "1920x1080@144Hz";
           pos = "1920 0";
+          bg = "${./. + "/assets/wall.png"} fill";
         };
       };
 
