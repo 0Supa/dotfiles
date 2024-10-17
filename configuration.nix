@@ -134,6 +134,7 @@
           # Internet
           librewolf
           chromium
+          firefox
           technorino
           pkgs-stable.electrum # BTC wallet
           # monero-gui # XMR wallet
@@ -220,7 +221,7 @@
       wrapperFeatures.gtk = true;
     };
 
-    firefox.enable = true;
+    # firefox.enable = true;
 
     zsh.enable = true;
 
@@ -270,7 +271,7 @@
     ];
 
     sessionVariables = {
-      BROWSER = "${lib.getExe pkgs.firefox}";
+      BROWSER = "${lib.getExe pkgs.librewolf}";
       EDITOR = "${lib.getExe pkgs.helix}";
 
       # NIXOS_OZONE_WL = "1"; # causes flickering in electron apps
