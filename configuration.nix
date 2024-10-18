@@ -19,6 +19,7 @@
       };
       efi.canTouchEfiVariables = true;
     };
+    kernel.sysctl = { "vm.swappiness" = 1; };
     tmp = {
       useTmpfs = true;
       tmpfsSize = "100%";
