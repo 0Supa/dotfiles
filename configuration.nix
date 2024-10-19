@@ -148,6 +148,7 @@
           # Utils/Misc
           kitty # Terminal
           fastfetch
+          pfetch-rs
           yt-dlp
           pavucontrol # Volume control
           keepassxc # Password manager
@@ -219,6 +220,7 @@
   programs = {
     sway = {
       enable = true;
+      package = null;
       wrapperFeatures.gtk = true;
     };
 

@@ -42,7 +42,19 @@
 
   wayland.windowManager.sway = {
     enable = true;
+    package = pkgs.swayfx;
     catppuccin.enable = true;
+
+    checkConfig = false;
+
+    extraOptions = [ "--unsupported-gpu" ];
+
+    extraConfig = ''
+      corner_radius 12
+      blur enable
+      shadows enable
+      titlebar_separator disable
+    '';
 
     config = {
       terminal = "kitty";
@@ -123,6 +135,8 @@
         size = 10.0;
       };
 
+      gaps.inner = 12;
+
       colors = {
         focused = {
           text = "$text";
@@ -169,9 +183,9 @@
             size = 11.0;
             style = "Bold";
           };
-          statusCommand = "${lib.getExe pkgs.i3status-rust} ~/.config/i3status-rust/config-top-patched.toml";
+          # statusCommand = "${lib.getExe pkgs.i3status-rust} ~/.config/i3status-rust/config-top-patched.toml";
           colors = {
-            background = "$base";
+            background = "#ffffff00";
             statusline = "$text";
             focusedStatusline = "$text";
             focusedWorkspace = {
@@ -217,7 +231,7 @@
       defaultKeymap = "emacs";
 
       localVariables = {
-        PS1 = "%F{240}[%F{183}%n%f@%F{117}%m %F{169}%~%F{240}]%f$ ";
+        PS1 = "%F{183}%n%f@%F{117}%m %F{169}%~%f ";
       };
 
       shellAliases = {
@@ -259,8 +273,8 @@
       extraConfig = ''
         draw_minimal_borders yes
         resize_in_steps no
-        background_opacity 0.8
-        dynamic_background_opacity yes
+        background_opacity 0.5
+        # dynamic_background_opacity yes
 
         map ctrl+shift+0 set_background_opacity +0.1
         map ctrl+shift+9 set_background_opacity -0.1
