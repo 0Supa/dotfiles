@@ -147,6 +147,7 @@
 
           # Utils/Misc
           kitty # Terminal
+          foot
           fastfetch
           yt-dlp
           pavucontrol # Volume control

@@ -45,7 +45,7 @@
     catppuccin.enable = true;
 
     config = {
-      terminal = "kitty";
+      terminal = "foot";
       modifier = "Mod1"; # alt
 
       startup = [
@@ -230,7 +230,7 @@
         ip = "ip -color=auto";
         grep = "grep --color=auto";
         vs = "codium";
-        s = "kitten ssh";
+        s = "ssh";
         v = "vim";
         e = "hx";
         neofetch = "fastfetch";
@@ -268,6 +268,18 @@
         symbol_map U+E0A0-U+E0A3,U+E0C0-U+E0C7 PowerlineSymbols
         symbol_map U+f000-U+f2e0 Font Awesome 6 Free
       '';
+    };
+
+    foot = {
+      enable = true;
+      settings = {
+        main = {
+          font = "monospace:size=12";
+        };
+        colors = {
+          alpha = 0.8;
+        };
+      };
     };
 
     swaylock.enable = true;
