@@ -188,6 +188,7 @@
           typescript-language-server
           nil
           nixpkgs-fmt # Used for nix formatting in vscode
+          php
 
           # Multimedia
           nsxiv # Image viewer
