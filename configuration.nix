@@ -31,6 +31,10 @@
   };
 
   networking.hostName = "Kappa";
+  zramSwap = {
+    enable = true;
+    memoryPercent = 100;
+  };
 
   time.timeZone = "Europe/Bucharest";
 
