@@ -69,7 +69,7 @@
           mode = "1920x1080@60Hz";
           pos = "0 0";
         };
-        DP-2 = {
+        DP-1 = {
           mode = "1920x1080@144Hz";
           pos = "1920 0";
           bg = "${./. + "/assets/wall.png"} fill";
@@ -111,8 +111,8 @@
       workspaceAutoBackAndForth = true;
 
       workspaceOutputAssign = [
-        { output = "DP-2"; workspace = "1"; }
-        { output = "DP-2"; workspace = "2"; }
+        { output = "DP-1"; workspace = "1"; }
+        { output = "DP-1"; workspace = "2"; }
         { output = "HDMI-A-1"; workspace = "5"; }
         { output = "HDMI-A-1"; workspace = "9"; }
         { output = "HDMI-A-1"; workspace = "10"; }
