@@ -252,6 +252,8 @@
     file-roller.enable = true;
   };
 
+  virtualisation.docker.enable = true;
+
   environment = {
     systemPackages = with pkgs; [
       # Essential
@@ -344,8 +346,8 @@
             src = super.chatterino2.src.override {
               owner = "2547techno";
               repo = "technorino";
-              rev = "54621083eb57d3e4565c1aa6e9ed6f19a5610dc7";
-              hash = "sha256-7ulRZPV/WVRH0HFm+V6rd67nviV+brhmtApw4jA/ZvE=";
+              rev = "b46cfef9e95a6fd6a9d05cbe78430f039541510c";
+              hash = "sha256-Sbuc53MRyZf3abthbaneWk7BVLGG9ASqCS+P70X0rMs=";
             };
           });
       })
