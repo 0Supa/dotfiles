@@ -1,15 +1,21 @@
 { config, pkgs, lib, ... }:
 
 {
-  catppuccin.flavor = "macchiato";
-  catppuccin.enable = true;
-
-  gtk = {
+  catppuccin = {
     enable = true;
-    catppuccin = {
+    flavor = "mocha";
+
+    gtk = {
       enable = true;
       icon.enable = true;
     };
+
+    sway.enable = true;
+    mpv.enable = true;
+  };
+
+  gtk = {
+    enable = true;
   };
 
   qt = {
@@ -42,7 +48,6 @@
 
   wayland.windowManager.sway = {
     enable = true;
-    catppuccin.enable = true;
 
     config = {
       terminal = "foot";
@@ -90,8 +95,7 @@
           "XF86AudioPause" = "exec playerctl play-pause";
           "XF86AudioNext" = "exec playerctl next";
           "XF86AudioPrev" = "exec playerctl previous";
-          # "F9" = "exec grim -g \"$(slurp)\" - | wl-copy --type=image/png";
-          "Print" = "exec ${lib.getExe pkgs.grimblast} --freeze copy area";
+          "Print" = "exec grim -g \"$(slurp)\" - | wl-copy --type=image/png";
           "${modifier}+d" = "exec ${lib.getExe pkgs.fuzzel}";
           "Control+${modifier}+t" = "exec ${terminal}";
           "Mod4+d" = "workspace 5; workspace 2";
@@ -341,7 +345,6 @@
 
     mpv = {
       enable = true;
-      catppuccin.enable = false;
       bindings = {
         G = "osd-msg-bar seek 100 absolute-percent+exact";
 

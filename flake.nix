@@ -1,7 +1,7 @@
 {
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "nixpkgs/nixos-24.05";
+    nixpkgs-stable.url = "nixpkgs/nixos-24.11";
 
     nixpkgs-wayland.url = "github:nix-community/nixpkgs-wayland";
     nixpkgs-wayland.inputs.nixpkgs.follows = "nixpkgs";
@@ -40,7 +40,7 @@
                 users.supa = {
                   imports = [
                     ./home.nix
-                    catppuccin.homeManagerModules.catppuccin
+                    catppuccin.homeModules.catppuccin
                   ];
                 };
               };
