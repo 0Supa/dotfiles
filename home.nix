@@ -53,7 +53,7 @@
     enable = true;
 
     config = {
-      terminal = "foot";
+      terminal = "kitty";
       modifier = "Mod1"; # alt
 
       startup = [
