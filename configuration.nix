@@ -292,6 +292,11 @@
       mako
       nvidia-vaapi-driver
       dig
+
+      (pkgs.writeShellScriptBin "c2" ''
+        export QT_QPA_PLATFORM=xcb
+        exec ${lib.getExe technorino} "$@"
+      '')
     ];
 
     sessionVariables = {
