@@ -1,13 +1,19 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, lib, inputs, pkgs, pkgs-stable, pkgs-wayland, callPackage, ... }:
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-    ];
+  config,
+  lib,
+  inputs,
+  pkgs,
+  pkgs-stable,
+  pkgs-wayland,
+  callPackage,
+  ...
+}: {
+  imports = [
+    ./hardware-configuration.nix
+  ];
 
   boot = {
     kernelPackages = pkgs.linuxKernel.packages.linux_zen;
@@ -19,7 +25,7 @@
       };
       efi.canTouchEfiVariables = true;
     };
-    kernel.sysctl = { "vm.swappiness" = 1; };
+    kernel.sysctl = {"vm.swappiness" = 1;};
     tmp = {
       useTmpfs = true;
       tmpfsSize = "100%";
@@ -27,7 +33,7 @@
   };
 
   fileSystems = {
-    "/".options = [ "relatime" "lazytime" "commit=60" ];
+    "/".options = ["relatime" "lazytime" "commit=60"];
   };
 
   zramSwap = {
@@ -86,11 +92,13 @@
   security = {
     doas = {
       enable = true;
-      extraRules = [{
-        groups = [ "wheel" ];
-        keepEnv = true;
-        persist = true;
-      }];
+      extraRules = [
+        {
+          groups = ["wheel"];
+          keepEnv = true;
+          persist = true;
+        }
+      ];
     };
 
     sudo.enable = false;
@@ -101,7 +109,7 @@
     xserver = {
       enable = true;
 
-      videoDrivers = [ "nvidia" ];
+      videoDrivers = ["nvidia"];
     };
 
     pipewire = {
@@ -142,7 +150,7 @@
       supa = {
         isNormalUser = true;
         description = "Supa";
-        extraGroups = [ "wheel" "gamemode" ];
+        extraGroups = ["wheel" "gamemode"];
         # upkg
         packages = with pkgs; [
           # Internet
@@ -186,7 +194,7 @@
           gopls
           typescript-language-server
           nil
-          nixpkgs-fmt # Used for nix formatting in vscode
+          alejandra # Used for nix formatting in vscode
           php
 
           # Multimedia
@@ -222,9 +230,9 @@
     fontconfig = {
       enable = true;
       defaultFonts = {
-        monospace = [ "Fantasque Sans Mono" ];
-        serif = [ "Noto Serif" ];
-        sansSerif = [ "Noto Sans" "Noto Color Emoji" ];
+        monospace = ["Fantasque Sans Mono"];
+        serif = ["Noto Serif"];
+        sansSerif = ["Noto Sans" "Noto Color Emoji"];
       };
     };
   };
@@ -244,7 +252,7 @@
 
     thunar = {
       enable = true;
-      plugins = with pkgs.xfce; [ thunar-archive-plugin thunar-volman ];
+      plugins = with pkgs.xfce; [thunar-archive-plugin thunar-volman];
     };
 
     file-roller.enable = true;
@@ -309,8 +317,8 @@
     };
 
     settings = {
-      trusted-users = [ "root" "supa" ];
-      experimental-features = [ "nix-command" "flakes" ];
+      trusted-users = ["root" "supa"];
+      experimental-features = ["nix-command" "flakes"];
       auto-optimise-store = true;
       warn-dirty = false;
 

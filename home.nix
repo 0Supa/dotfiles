@@ -1,6 +1,9 @@
-{ config, pkgs, lib, ... }:
-
 {
+  config,
+  pkgs,
+  lib,
+  ...
+}: {
   catppuccin = {
     enable = true;
     flavor = "mocha";
@@ -54,9 +57,9 @@
       modifier = "Mod1"; # alt
 
       startup = [
-        { command = "nvidia-settings --load-config-only"; }
-        { command = ''swayidle timeout 15 "pgrep -x swaylock && swaymsg \"output * power off\"" resume "swaymsg \"output * power on\""''; }
-        { command = "wl-paste --primary --watch wl-copy --primary --clear"; }
+        {command = "nvidia-settings --load-config-only";}
+        {command = ''swayidle timeout 15 "pgrep swaylock && swaymsg \"output * power off\"" resume "swaymsg \"output * power on\""'';}
+        {command = "wl-paste --primary --watch wl-copy --primary --clear";}
       ];
 
       input = {
@@ -81,12 +84,11 @@
         };
       };
 
-      keybindings =
-        let
-          cfg = config.wayland.windowManager.sway.config;
-          modifier = cfg.modifier;
-          terminal = cfg.terminal;
-        in
+      keybindings = let
+        cfg = config.wayland.windowManager.sway.config;
+        modifier = cfg.modifier;
+        terminal = cfg.terminal;
+      in
         lib.mkOptionDefault {
           "XF86AudioRaiseVolume" = "exec wpctl set-volume @DEFAULT_SINK@ 4%+";
           "XF86AudioLowerVolume" = "exec wpctl set-volume @DEFAULT_SINK@ 4%-";
@@ -115,15 +117,30 @@
       workspaceAutoBackAndForth = true;
 
       workspaceOutputAssign = [
-        { output = "DP-1"; workspace = "1"; }
-        { output = "DP-1"; workspace = "2"; }
-        { output = "HDMI-A-1"; workspace = "5"; }
-        { output = "HDMI-A-1"; workspace = "9"; }
-        { output = "HDMI-A-1"; workspace = "10"; }
+        {
+          output = "DP-1";
+          workspace = "1";
+        }
+        {
+          output = "DP-1";
+          workspace = "2";
+        }
+        {
+          output = "HDMI-A-1";
+          workspace = "5";
+        }
+        {
+          output = "HDMI-A-1";
+          workspace = "9";
+        }
+        {
+          output = "HDMI-A-1";
+          workspace = "10";
+        }
       ];
 
       fonts = {
-        names = [ "Monospace" ];
+        names = ["Monospace"];
         size = 10.0;
       };
 
@@ -245,7 +262,7 @@
 
       initExtra = ''
         zstyle ":completion:*" matcher-list "" "m:{a-zA-Z}={A-Za-z}"
-      
+
         bindkey "^[[1;5C" forward-word
         bindkey "^[[1;5D" backward-word
         bindkey "^H" backward-kill-word
@@ -419,7 +436,7 @@
         };
         keys.normal = {
           space.space = "file_picker";
-          esc = [ "collapse_selection" "keep_primary_selection" ];
+          esc = ["collapse_selection" "keep_primary_selection"];
         };
       };
     };
