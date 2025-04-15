@@ -109,7 +109,7 @@
         };
 
       focus = {
-        followMouse = false;
+        # followMouse = false;
         wrapping = "no";
         mouseWarping = false;
       };
