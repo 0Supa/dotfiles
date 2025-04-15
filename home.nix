@@ -440,11 +440,6 @@
         };
       };
     };
-
-    vscode = {
-      enable = true;
-      package = pkgs.vscodium;
-    };
   };
 
   services = {
