@@ -246,7 +246,7 @@
         l = "ls";
         la = "ls -a";
         ll = "ls -l";
-        ka = "killall -I";
+        ka = "killall -I -r";
         update = "doas nixos-rebuild switch --flake ~/.dotfiles";
         ip = "ip -color=auto";
         grep = "grep --color=auto";
