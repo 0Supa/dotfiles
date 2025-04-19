@@ -184,7 +184,7 @@
           dbgate
 
           # Dev
-          vscodium
+          vscode
           github-desktop
           helix
           insomnia
