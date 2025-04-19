@@ -203,6 +203,7 @@
           spotify
           obs-studio
           audacity
+          imagemagick
 
           # Games
           prismlauncher # Minecraft launcher
