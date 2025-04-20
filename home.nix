@@ -3,7 +3,8 @@
   pkgs,
   lib,
   ...
-}: {
+}:
+{
   catppuccin = {
     enable = true;
     flavor = "mocha";
@@ -57,9 +58,11 @@
       modifier = "Mod1"; # alt
 
       startup = [
-        {command = "nvidia-settings --load-config-only";}
-        {command = ''swayidle timeout 15 "pgrep swaylock && swaymsg \"output * power off\"" resume "swaymsg \"output * power on\""'';}
-        {command = "wl-paste --primary --watch wl-copy --primary --clear";}
+        { command = "nvidia-settings --load-config-only"; }
+        {
+          command = ''swayidle timeout 15 "pgrep swaylock && swaymsg \"output * power off\"" resume "swaymsg \"output * power on\""'';
+        }
+        { command = "wl-paste --primary --watch wl-copy --primary --clear"; }
       ];
 
       input = {
@@ -84,11 +87,12 @@
         };
       };
 
-      keybindings = let
-        cfg = config.wayland.windowManager.sway.config;
-        modifier = cfg.modifier;
-        terminal = cfg.terminal;
-      in
+      keybindings =
+        let
+          cfg = config.wayland.windowManager.sway.config;
+          modifier = cfg.modifier;
+          terminal = cfg.terminal;
+        in
         lib.mkOptionDefault {
           "XF86AudioRaiseVolume" = "exec wpctl set-volume @DEFAULT_SINK@ 4%+";
           "XF86AudioLowerVolume" = "exec wpctl set-volume @DEFAULT_SINK@ 4%-";
@@ -140,7 +144,7 @@
       ];
 
       fonts = {
-        names = ["Monospace"];
+        names = [ "Monospace" ];
         size = 10.0;
       };
 
@@ -436,7 +440,10 @@
         };
         keys.normal = {
           space.space = "file_picker";
-          esc = ["collapse_selection" "keep_primary_selection"];
+          esc = [
+            "collapse_selection"
+            "keep_primary_selection"
+          ];
         };
       };
     };
