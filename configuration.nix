@@ -194,7 +194,7 @@
           gopls
           typescript-language-server
           nil
-          alejandra # Used for nix formatting in vscode
+          nixfmt-rfc-style
           php
 
           # Multimedia
