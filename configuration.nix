@@ -192,6 +192,7 @@
           gnupg
           session-desktop
           dbgate
+          libreoffice
 
           # Dev
           vscode
@@ -200,6 +201,8 @@
           insomnia
           gh
           lazygit
+          rustc
+          cargo
           # LSP
           gopls
           typescript-language-server
@@ -210,6 +213,8 @@
           # Multimedia
           nsxiv # Image viewer
           mpv
+          jellyfin-mpv-shim
+          jellyfin-rpc
           spotify
           obs-studio
           audacity
