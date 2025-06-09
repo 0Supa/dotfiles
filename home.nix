@@ -101,6 +101,7 @@
           "XF86AudioPause" = "exec playerctl play-pause";
           "XF86AudioNext" = "exec playerctl next";
           "XF86AudioPrev" = "exec playerctl previous";
+          "F9" = "exec grim -g \"$(slurp)\" - | wl-copy --type=image/png";
           "Print" = "exec grim -g \"$(slurp)\" - | wl-copy --type=image/png";
           "${modifier}+d" = "exec ${lib.getExe pkgs.fuzzel}";
           "Control+${modifier}+t" = "exec ${terminal}";
@@ -264,7 +265,7 @@
       history.size = 5000;
       history.path = "${config.xdg.dataHome}/zsh/history";
 
-      initExtra = ''
+      initContent = ''
         zstyle ":completion:*" matcher-list "" "m:{a-zA-Z}={A-Za-z}"
 
         bindkey "^[[1;5C" forward-word
@@ -380,7 +381,7 @@
         "Alt+=" = "add video-zoom 0.1";
       };
       config = {
-        vo = "gpu";
+        vo = "gpu-next";
         hwdec = "auto-copy";
         hwdec-codecs = "all";
         profile = "gpu-hq";
@@ -452,7 +453,7 @@
   services = {
     mako = {
       enable = true;
-      defaultTimeout = 5000;
+      settings.default-timeout = 5000;
     };
   };
 
