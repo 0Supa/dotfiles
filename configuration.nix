@@ -93,6 +93,9 @@
       nvidiaSettings = true;
     };
 
+    bluetooth.enable = true;
+    bluetooth.powerOnBoot = true;
+
     # logitech.wireless.enable = true;
   };
 
@@ -148,6 +151,7 @@
     };
 
     gvfs.enable = true;
+    blueman.enable = true;
   };
 
   users = {

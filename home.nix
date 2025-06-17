@@ -455,6 +455,8 @@
       enable = true;
       settings.default-timeout = 5000;
     };
+
+    mpris-proxy.enable = true;
   };
 
   xdg.mimeApps = {
