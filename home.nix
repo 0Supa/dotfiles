@@ -345,6 +345,10 @@
               block = "temperature";
             }
             {
+              block = "bluetooth";
+              mac = "80:C3:BA:81:3D:BD";
+            }
+            {
               block = "sound";
               click = [
                 {
