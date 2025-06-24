@@ -142,13 +142,13 @@
       };
     };
 
-    cron = {
-      enable = true;
-      systemCronJobs = [
-        # Send a message to turn off headphones rgb every minute
-        "* * * * *  root  ${lib.getExe pkgs.headsetcontrol} -l 0"
-      ];
-    };
+    # cron = {
+    #   enable = true;
+    #   systemCronJobs = [
+    #     # Send a message to turn off headphones rgb every minute
+    #     "* * * * *  root  ${lib.getExe pkgs.headsetcontrol} -l 0"
+    #   ];
+    # };
 
     gvfs.enable = true;
     blueman.enable = true;
@@ -188,7 +188,6 @@
           pavucontrol # Volume control
           keepassxc # Password manager
           flameshot # Screenshots
-          headsetcontrol # Used for disabling shitty RGB
           songrec # Shazam song recognition
           scrcpy
           filezilla
